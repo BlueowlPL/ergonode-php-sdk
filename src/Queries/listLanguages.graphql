@@ -1,0 +1,12 @@
+query listLanguages {
+    languageList {
+        pageInfo {
+            hasNextPage
+            endCursor
+        }
+        totalCount
+        edges {
+            node
+        }
+    }
+}

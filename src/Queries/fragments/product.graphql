@@ -1,0 +1,16 @@
+fragment Product on Product {
+    __typename
+    sku
+    createdAt
+    editedAt
+    template {
+        code
+    }
+    attributeList {
+        edges {
+            node {
+                ...AttributeValue
+            }
+        }
+    }
+}

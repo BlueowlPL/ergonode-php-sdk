@@ -1,0 +1,27 @@
+query listTemplates($first: Int, $after: String) {
+    templateList(first: $first, after: $after) {
+        pageInfo {
+            hasNextPage
+            endCursor
+        }
+        totalCount
+        edges {
+            node {
+                code
+                attributeList {
+                    edges {
+                        node {
+                            __typename
+                            scope
+                            code
+                            name {
+                                value
+                                language
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

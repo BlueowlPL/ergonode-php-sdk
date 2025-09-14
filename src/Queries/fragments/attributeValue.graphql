@@ -1,0 +1,106 @@
+fragment AttributeValue on AttributeValue {
+    attribute {
+        __typename
+        code
+        scope
+        name {
+            language
+            value
+        }
+    }
+    ... on TextAttributeValue {
+        TextAttributeValueTranslations: translations {
+            value
+            language
+        }
+    }
+    ... on TextareaAttributeValue {
+        TextareaAttributeValueTranslations: translations {
+            value
+            language
+        }
+    }
+    ... on DateAttributeValue {
+        DateAttributeValueTranslations: translations {
+            value
+            language
+        }
+    }
+    ... on UnitAttributeValue {
+        UnitAttributeUnit: attribute {
+            # unit might be useful in the value context
+            unit {
+                name
+                symbol
+            }
+        }
+        UnitAttributeValueTranslations: translations {
+            value
+            language
+        }
+    }
+    ... on PriceAttributeValue {
+        PriceAttributeCurrency: attribute {
+            # currency might be useful in the price context
+            currency
+        }
+        PriceAttributeValueTranslations: translations {
+            value
+            language
+        }
+    }
+    ... on NumberAttributeValue {
+        NumericAttributeValueTranslations: translations {
+            value
+            language
+        }
+    }
+    ... on ProductRelationAttributeValue {
+        ProductRelationAttributeValueTranslations: translations {
+            value {
+                sku
+            }
+            language
+        }
+    }
+    ... on FileAttributeValue {
+        FileAttributeValueTranslations: translations {
+            value {
+                ...Multimedia
+            }
+            language
+        }
+    }
+    ... on GalleryAttributeValue {
+        GalleryAttributeValueTranslations: translations {
+            value {
+                ...Multimedia
+            }
+            language
+        }
+    }
+    ... on ImageAttributeValue {
+        ImageAttributeValueTranslations: translations {
+            value {
+                ...Multimedia
+            }
+            language
+        }
+    }
+    ... on MultiSelectAttributeValue {
+        MultiSelectAttributeValueTranslations: translations {
+            translatedValue {
+                ...OptionTranslatedValue
+            }
+            language
+        }
+    }
+    ... on SelectAttributeValue {
+        SelectAttributeValueTranslations: translations {
+            translatedValue {
+                ...OptionTranslatedValue
+            }
+            language
+        }
+    }
+}

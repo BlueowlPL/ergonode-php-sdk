@@ -1,0 +1,16 @@
+fragment Multimedia on Multimedia {
+    path
+    name
+    extension
+    mime
+    size
+    alt {
+        value
+        language
+    }
+    title {
+        value
+        language
+    }
+    url
+}

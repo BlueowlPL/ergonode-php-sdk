@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+        bootstrap="tests/bootstrap.php"
+        colors="true"
+        verbose="true"
+        stopOnFailure="false"
+        executionOrder="depends"
+>
+    <!-- Environment / PHP settings -->
+    <php>
+        <ini name="display_errors" value="1"/>
+        <ini name="display_startup_errors" value="1"/>
+        <ini name="error_reporting" value="-1"/>
+    </php>
+
+    <testsuites>
+        <testsuite name="Unit">
+            <directory suffix="Test.php">./tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <!-- Code coverage (optional; requires Xdebug/PCOV) -->
+    <coverage processUncoveredFiles="false">
+        <include>
+            <directory suffix=".php">./src</directory>
+        </include>
+    </coverage>
+
+    <logging>
+        <!-- JUnit for CI -->
+        <log type="junit" target="build/logs/junit.xml" logIncompleteSkipped="false"/>
+        <!-- TestDox plain text -->
+        <log type="testdox-text" target="build/logs/testdox.txt"/>
+    </logging>
+</phpunit>

@@ -1,0 +1,98 @@
+# ------------------------
+# PHP / Composer
+# ------------------------
+/vendor/
+/composer.phar
+/.phpunit.result.cache
+/phpunit.xml.cache
+
+# Composer dump-autoload artifacts
+/composer.lock.*.cache
+
+# ------------------------
+# Environment / secrets
+# ------------------------
+.tests
+.env
+.env.*.local
+.env.local
+.env.backup
+/.env
+
+# ------------------------
+# IDEs / editors
+# ------------------------
+/.idea/
+/.vscode/
+/*.iml
+/.phpstorm.meta.php
+
+# ------------------------
+# OS files
+# ------------------------
+.DS_Store
+Thumbs.db
+*:Zone.Identifier
+
+# ------------------------
+# Node / frontend (if present)
+# ------------------------
+/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ------------------------
+# Build / CI / coverage / logs
+# ------------------------
+/build/
+/build/logs/
+/build/coverage/
+/coverage/
+/coverage-html/
+/phpunit.coverage.*
+/logs/
+/*.log
+
+# ------------------------
+# Temporary / cache
+# ------------------------
+/tmp/
+/.cache/
+/.sass-cache/
+*.cache
+
+# ------------------------
+# Storage / uploads / generated artifacts
+# ------------------------
+/storage/
+/public/storage/
+/uploads/
+/dist/
+/release/
+/artifacts/
+/generated/
+
+# ------------------------
+# Binary / keys / certificates
+# ------------------------
+*.key
+*.pem
+*.p12
+*.pfx
+
+# ------------------------
+# Archives / OS packages
+# ------------------------
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# ------------------------
+# Misc
+# ------------------------
+*.swp
+*~
+*.bak

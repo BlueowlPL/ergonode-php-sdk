@@ -1,0 +1,32 @@
+fragment OptionTranslatedValue on OptionTranslatedValue {
+    code
+    name
+    customFields {
+        ... on ImageCustomFieldTranslatedValue {
+            customField {
+                code
+            }
+            image: value {
+                ...Multimedia
+            }
+        }
+        ... on TextCustomFieldTranslatedValue {
+            customField {
+                code
+            }
+            value
+        }
+        ... on TextareaCustomFieldTranslatedValue {
+            customField {
+                code
+            }
+            value
+        }
+        ... on TextareaRTECustomFieldTranslatedValue {
+            customField {
+                code
+            }
+            value
+        }
+    }
+}

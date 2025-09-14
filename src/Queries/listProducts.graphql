@@ -1,0 +1,15 @@
+query listProducts($first: Int, $after: String) {
+    productStream(first: $first, after: $after) {
+        pageInfo {
+            hasNextPage
+            endCursor
+        }
+        totalCount
+        edges {
+            node {
+                ...Product
+            }
+        }
+    }
+}
+{FRAGMENTS}

@@ -1,0 +1,6 @@
+query singleProduct($code: Sku!) {
+    product(sku: $code) {
+        ...Product
+    }
+}
+{FRAGMENTS}
