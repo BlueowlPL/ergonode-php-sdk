@@ -40,6 +40,16 @@ abstract class ErgonodeAttribute
         return $this->type;
     }
 
+    public function getTranslatedNames(): array
+    {
+        return $this->translatedNames;
+    }
+
+    public function getTranslatedValues(): array
+    {
+        return $this->translatedValues;
+    }
+
     public static function handleType(string $type): ?string
     {
         return match ($type) {
