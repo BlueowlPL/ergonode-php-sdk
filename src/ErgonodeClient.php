@@ -4,6 +4,7 @@ namespace Ergonode;
 
 use Ergonode\Builders\LanguageBuilder;
 use Ergonode\Builders\ProductBuilder;
+use Ergonode\Builders\ProductBaseBuilder;
 use Ergonode\Builders\TemplateBuilder;
 
 class ErgonodeClient
@@ -26,5 +27,8 @@ class ErgonodeClient
     }
     public function products(): ProductBuilder{
         return new ProductBuilder($this->loader, $this->client);
+    }
+    public function productsBase(): ProductBaseBuilder{ 
+        return new ProductBaseBuilder($this->loader, $this->client); 
     }
 }

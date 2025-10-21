@@ -1,11 +1,11 @@
 <?php
 
 
-use Ergonode\Builders\ProductBuilder;
+use Ergonode\Builders\ProductBaseBuilder;
 use Ergonode\ErgonodeClient;
 use PHPUnit\Framework\TestCase;
 
-class ErgonodeProductTest extends TestCase
+class ErgonodeProductBaseTest extends TestCase
 {
     private ErgonodeClient $ergonodeClient;
 
@@ -16,22 +16,22 @@ class ErgonodeProductTest extends TestCase
 
     public function testListProducts(): void
     {
-        $this->assertInstanceOf(ProductBuilder::class, $this->ergonodeClient->products());
+        $this->assertInstanceOf(ProductBaseBuilder::class, $this->ergonodeClient->productsBase());
 
-        $products = $this->ergonodeClient->products()->perPage(10)->get();
+        $products = $this->ergonodeClient->productsBase()->perPage(10)->get();
 
         $this->assertIsObject($products);
         $this->assertFalse($products->isError());
         $this->assertNotEmpty($products->getData());
 
-//        error_log(print_r($products->getData(), true));
+        error_log(print_r($products->getData(), true));
     }
 
     public function testListProductsPagination(): void
     {
-        $this->assertInstanceOf(ProductBuilder::class, $this->ergonodeClient->products());
+        $this->assertInstanceOf(ProductBaseBuilder::class, $this->ergonodeClient->productsBase());
 
-        $builder = $this->ergonodeClient->products()->perPage(10);
+        $builder = $this->ergonodeClient->productsBase()->perPage(10);
         $products_1 = $builder->get();
         $products_2 = $builder->get();
 
@@ -40,9 +40,9 @@ class ErgonodeProductTest extends TestCase
 
     public function testSingleProduct(): void
     {
-        $this->assertInstanceOf(ProductBuilder::class, $this->ergonodeClient->products());
+        $this->assertInstanceOf(ProductBaseBuilder::class, $this->ergonodeClient->productsBase());
 
-        $products = $this->ergonodeClient->products()->perPage(1)->get();
+        $products = $this->ergonodeClient->productsBase()->perPage(1)->get();
 
         $sku = $products->getData()[0]->getCode();
         $product = $this->ergonodeClient->products()->single($sku)->get();

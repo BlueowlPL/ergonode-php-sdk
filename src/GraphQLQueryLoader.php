@@ -12,6 +12,7 @@ class GraphQLQueryLoader
         'product' => 'singleProduct.graphql',
 
         'fragment.product' => 'fragments/product.graphql',
+        'fragment.productBase' => 'fragments/productBase.graphql',
         'fragment.attribute' => 'fragments/attributeValue.graphql',
         'fragment.multimedia' => 'fragments/multimedia.graphql',
         'fragment.options' => 'fragments/optionTranslations.graphql',
