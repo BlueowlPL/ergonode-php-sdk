@@ -6,7 +6,7 @@ fragment Product on Product {
     template {
         code
     }
-    attributeList {
+    attributeList(first: 1500) {
         edges {
             node {
                 ...AttributeValue
